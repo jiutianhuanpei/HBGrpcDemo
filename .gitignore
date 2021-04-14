@@ -1,0 +1,4 @@
+HBClient/HBClient/*
+HBService/HBService/*
+*.pro.user
+PBFiles/*

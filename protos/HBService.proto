@@ -1,0 +1,30 @@
+
+syntax = "proto3";
+
+package SHB;
+
+enum MessageType {
+	Chat_Msg = 0;
+	Group_Msg = 1;
+	Push_Msg = 2;
+}
+
+service HBService {
+	rpc request(HBRequest) returns (HBResponse){}
+	rpc streamRequest(stream HBRequest) returns (stream HBResponse) {}
+}
+
+
+message HBRequest {
+	string phone = 1;
+	string data = 2;
+}
+
+message HBResponse {
+	
+	MessageType type = 1;
+	string from = 2;
+	string data = 3;
+}
+
+
